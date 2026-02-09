@@ -1,8 +1,9 @@
+/* --- STYLES GÉNÉRAUX --- */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* min-height est mieux pour le mobile */
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #fff0f3;
@@ -10,26 +11,69 @@ body {
 
 .container {
     text-align: center;
+    padding: 20px;
+    width: 100%; /* Prend toute la largeur sur petit écran */
+    max-width: 400px; /* Limite la largeur sur ordinateur */
+}
+
+#valentine-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ff4d6d;
+    margin: 20px 0;
+}
+
+/* --- BOUTONS --- */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espace entre les boutons sans utiliser margin-left */
+    flex-wrap: wrap; /* Permet de passer à la ligne si besoin */
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
 }
 
 #yes {
     background-color: #ff4d6d;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Pour un agrandissement fluide */
 }
 
 #no {
     background-color: #808080;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-left: 10px;
+}
+
+/* --- ADAPTATION MOBILE --- */
+@media (max-width: 600px) {
+    p {
+        font-size: 1.4rem; /* Texte un peu plus grand pour lisibilité */
+    }
+
+    .buttons {
+        flex-direction: column; /* Boutons l'un au-dessus de l'autre */
+        width: 100%;
+    }
+
+    button {
+        width: 100%; /* Les boutons prennent toute la largeur du container */
+        max-width: 250px; /* Mais restent raisonnables */
+        padding: 15px; /* Plus facile à cliquer au doigt */
+    }
+
+    #valentine-img {
+        width: 80%; /* Image légèrement réduite */
+    }
 }

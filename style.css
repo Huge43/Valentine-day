@@ -67,12 +67,6 @@ button {
         width: 100%;
     }
 
-    button {
-        width: 100%; /* Les boutons prennent toute la largeur du container */
-        max-width: 250px; /* Mais restent raisonnables */
-        padding: 15px; /* Plus facile à cliquer au doigt */
-    }
-
     #valentine-img {
         width: 80%; /* Image légèrement réduite */
     }
